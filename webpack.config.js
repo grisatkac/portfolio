@@ -2,15 +2,15 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
+//const isDev = process.env.NODE_ENV === 'development'
+//const isProd = !isDev
 
 module.exports = {
     mode: 'development',
-    context: path.resolve(__dirname, 'src'),
-    entry: ['@babel/polyfill','./client/index.js'],
+    //context: path.resolve(__dirname, 'src'),
+    entry: ['@babel/polyfill','./src/client/index.js'],
     output: {
-        filename: '[name].[contenthash].js',
+        filename: 'main.[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -23,13 +23,13 @@ module.exports = {
     },
     devServer: {
         port: 4200,
-        hot: isDev
+        hot: true //isDev
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: './public/index.html',
+            template: './src/public/index.html',
             minify: {
-                collapseWhitespace: isProd
+                collapseWhitespace: false //isProd
             }
         }),
         new CleanWebpackPlugin(),
