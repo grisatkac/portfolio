@@ -1,8 +1,8 @@
+const { json } = require('express')
 const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
-
 
 // /app/auth/login
 router.post('/login', async (req, res) => {
@@ -16,9 +16,20 @@ router.post('/login', async (req, res) => {
         const user = await User.findOne({email})
 
         if (!user) {
-            return res.status(400).json({message: 'Ошибка при входе, пользователя с такой почтойне существует'})
+            return res.status(400).json({message: 'Ошибка при входе: пользователя с такой почтой не существует'})
         }
 
+        const samePasswords = (password === user.password) ? true : false
+
+        if (!samePasswords) {
+            return res.status(400).json({message: 'Ошибка при входе: неправильный пароль'})
+        }
+
+        const secretKey = 'pistapool key'
+
+        const token = jwt.sign({userId: user.id}, secretKey, {expiresIn: '24h'})
+
+        return res.json({token})
     } catch (error) {
         console.log(error)
         return res.status(400).json({message: 'Серверная ошибка при входе в аккаунт'})
@@ -33,7 +44,7 @@ router.post('/registr', async (req,res) => {
 
         const {email, password} = req.body
 
-        const user = User.findOne({email})
+        const user = await User.findOne({email})
 
         if (user) {
             return res.status(400).json({message: 'Ошибка при регистрации: пользователь с такой почтой уже сущестует'})
@@ -44,10 +55,9 @@ router.post('/registr', async (req,res) => {
             password
         })
         
-        newUser.save()
+        await newUser.save()
 
         return res.status(200).json({message: 'Пользователь успешно создан'})
-
     } catch (error) {
         console.log(error)
         return res.status(400).json({message: 'Серверная ошибка при регистрации'})
