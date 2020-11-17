@@ -23,7 +23,7 @@ const useHttp = () => {
                 return 'Ошибка при запросе'
             }
 
-            const data = response.json()
+            const data = await response.json()
 
             setLoading(false)
 
