@@ -10,12 +10,23 @@ const Header = () => {
     }
 
     return (
-        <>
-            <div>
-                HEADER
+        <header>
+            <div className="">Logo</div>
+
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Team</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+
+            <div className="">
+                <div>burger</div>
+                <button onClick={clickHandler}>Logout</button>
             </div>
-            <button onClick={clickHandler}>Logout</button>
-        </>
+        </header>
     )
 }
 

@@ -12,6 +12,7 @@ export default function App() {
 
 
     return (
+        <div className='container'>
         <BrowserRouter>
             <AuthContext.Provider value={{ login, logout }}>
                     {routes}
@@ -19,5 +20,6 @@ export default function App() {
 
             </AuthContext.Provider>
         </BrowserRouter>
+        </div>
     )
 }
