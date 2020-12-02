@@ -1,23 +1,36 @@
+import {Switch, Route, Redirect} from 'react-router-dom'
 import React from "react"
-import Header from "../components/Header"
 import Auth from "../pages/Auth"
-import Main from "../pages/Main"
-
+import Home from "../pages/Home"
+import About from "../pages/About"
+import Contact from "../pages/Contact"
 
 const Routes = (auth) => {
-
     if (auth) {
         return (
-            <>
-                <Header />
-                <Main />
-            </>
+            <Switch>
+                <Route path="/home" exact>
+                    <Home />
+                </Route>
+                <Route path="/about" exact>
+                    <About />
+                </Route>
+                <Route path="/contact">
+                    <Contact />
+                </Route>
+                <Redirect to="/home" />
+            </Switch>
         )
     }
 
     return (
-        <Auth />
+        <Switch>
+            <Route path="/" exact>
+                <Auth />
+            </Route>
+            <Redirect to="/" />
+        </Switch>
     )
+    
 }
-
 export default Routes
