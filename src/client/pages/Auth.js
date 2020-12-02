@@ -12,9 +12,6 @@ export default function Auth() {
         e.preventDefault()
         const data = await request('http://localhost:3000/api/auth/login', {method: 'POST', body: {email, password}})
         login(data.token)
-        
-        console.log('receive user id from server: ', data.userId)
-        console.log('receive token from server: ', data.token)
     }
 
     const registerHandler = async (e) => {
