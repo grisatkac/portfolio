@@ -10,7 +10,7 @@ import Loader from './components/Loader'
 export default function App() {
     const { token, login, logout, ready } = useAuth()
     const auth = !!token
-    const routes = Routes(true)
+    const routes = Routes(auth)
 
     return (
             <AuthContext.Provider value={{ login, logout }}>
