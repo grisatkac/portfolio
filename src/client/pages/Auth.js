@@ -6,7 +6,7 @@ export default function Auth() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {request} = useHttp()
-    const {login, logout} = useContext(Context)
+    const {login} = useContext(Context)
 
     const loginHandler = async (e) => {
         e.preventDefault()
