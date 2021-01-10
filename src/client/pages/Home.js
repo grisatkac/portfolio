@@ -8,7 +8,6 @@ const Home = () => {
                 Home page
             </div>
             <div>
-                To do app
                 <ToDo />
             </div>
         </>
