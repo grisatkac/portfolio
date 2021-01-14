@@ -7,7 +7,7 @@ export const toDoReducer = (state = initialState, action) => {
         case 'TODO/CREATE_TASK':
             return { ...state, tasks: state.tasks.concat([action.payload]) }
         case 'TODO/CHANGE_FILTER':
-            return { ...state, filter: payload }
+            return { ...state, filter: action.payload }
 
         default:
             return state;
