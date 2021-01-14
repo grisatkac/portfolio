@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { createTask } from '../../redux/actions/toDoTasks'
 
 const ToDoInput = () => {
-    const [value, setValue] = useState({title: ''})
+    const [value, setValue] = useState({title: '', completed: 'active'})
     const dispatch = useDispatch()
 
     const changeInputHanler = (e) => {
@@ -15,9 +15,8 @@ const ToDoInput = () => {
     }
 
     const onclickHandler = () => {
-        console.log(value.title)
+        setValue({title: '', completed: 'active'})
         dispatch(createTask(value))
-        setValue({title: ''})
     }
 
     return (
