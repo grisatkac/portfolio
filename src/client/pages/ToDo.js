@@ -7,13 +7,15 @@ import ToDoTasks from '../components/ToDo/ToDoTasks'
 
 const ToDo = () => {
     const tasks = useSelector(state => state.ToDoList.tasks)
-    const [activeFilter, setActiveFilter] = useState('all')
+    const activeFilter = useSelector(state => state.ToDoList.filter)
+    //const [activeFilter, setActiveFilter] = useState('all') setActiveFilter={setActiveFilter}
+    console.log('tasks tood', tasks)
 
     return (
         <>
             <ToDoInput />
             <ToDoTasks tasks={tasks} activeFilter={activeFilter}/>
-            <ToDoFooter tasks={tasks} activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
+            <ToDoFooter tasks={tasks} activeFilter={activeFilter}  />
         </>
     )
 }
