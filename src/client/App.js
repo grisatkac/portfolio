@@ -13,7 +13,7 @@ export default function App() {
     const routes = Routes(auth)
 
     return (
-            <AuthContext.Provider value={{ login, logout }}>
+            <AuthContext.Provider value={{ token, login, logout }}>
                     {auth && <Header />}
                     {routes}
                     <Footer />
