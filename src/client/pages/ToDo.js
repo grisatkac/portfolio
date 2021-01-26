@@ -19,7 +19,7 @@ const ToDo = () => {
         const response = await request('http://localhost:3000/app/todo/tasks', {
             method: 'GET', body: null, headers: {authorization: token}}
         )
-
+        console.log('---response---')
         console.log(response)
 
     }, [token])
