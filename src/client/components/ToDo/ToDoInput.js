@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { createTask } from '../../redux/actions/toDoTasks'
+import { createTask, updateToDoList } from '../../redux/actions/toDo'
 
 const ToDoInput = () => {
     const [value, setValue] = useState({title: '', completed: 'active'})
@@ -16,7 +16,8 @@ const ToDoInput = () => {
 
     const onclickHandler = () => {
         setValue({title: '', completed: 'active'})
-        dispatch(createTask(value))
+        //dispatch(createTask(value))
+        dispatch(updateToDoList(value))
     }
 
     return (
