@@ -21,4 +21,9 @@ router.get('/tasks', auth, async (req, res) => {
 
 })
 
+router.post('/update', async (req, res) => {
+    console.log('update request is working')
+    return res.status(200).json({message: 'Запрос прошел успешно'})
+})
+
 module.exports = router
