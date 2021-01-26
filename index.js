@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
   
 
 app.use('/app/auth', require('./src/server/routes/auth.routes'))
-//app.use('/app/todo', require('./src/server/routes/taskList.routes'))
+app.use('/app/todo', require('./src/server/routes/taskList.routes'))
 async function start() {
     try {
         'mongodb+srv://Grisha:<password>@cluster0.zrczy.mongodb.net/<dbname>?retryWrites=true&w=majority'
