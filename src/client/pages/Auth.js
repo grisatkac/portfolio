@@ -10,13 +10,13 @@ export default function Auth() {
 
     const loginHandler = async (e) => {
         e.preventDefault()
-        const data = await request('http://localhost:3000/api/auth/login', {method: 'POST', body: {email, password}})
+        const data = await request('http://localhost:3000/app/auth/login', {method: 'POST', body: {email, password}})
         login(data.token)
     }
 
     const registerHandler = async (e) => {
         e.preventDefault()
-        request('http://localhost:3000/api/auth/registr', {method: 'POST', body: {email, password}})
+        request('http://localhost:3000/app/auth/registr', {method: 'POST', body: {email, password}})
     }
 
     return (

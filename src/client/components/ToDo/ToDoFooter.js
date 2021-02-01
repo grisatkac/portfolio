@@ -1,10 +1,13 @@
-import { set } from 'mongoose'
 import React from 'react'
+import { useDispatch } from "react-redux"
 import Default from '../../../config/default'
+import {changeFilter} from '../../redux/actions/toDo'
 
 const ToDoFooter = ({ tasks, setActiveFilter}) => {
+    const dispatch = useDispatch()
     const clickHandler = (e) => {
-        setActiveFilter(e.target.value)
+        //setActiveFilter(e.target.value)
+        dispatch(changeFilter(e.target.value))
     }
 
     return (
