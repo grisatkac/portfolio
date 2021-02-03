@@ -9,7 +9,7 @@ const Home = () => {
             </div>
             <div>
                 <ToDo />
-            </div>
+            </div>    
         </>
     )
 }
