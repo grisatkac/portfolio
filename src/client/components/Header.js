@@ -16,9 +16,9 @@ const Header = () => {
             <div className="header__logo"><span>PISTAPOOL</span></div>
             <nav className="header__nav">
                 <ul>
-                    <NavLink to="/home"><li>Home</li></NavLink>
+                    <NavLink exact to="/home"><li>Home</li></NavLink>
                     <NavLink to="/about"><li>About</li></NavLink>
-                    <NavLink to="contact"><li>Contact</li></NavLink>
+                    <NavLink to="/contact"><li>Contact</li></NavLink>
                 </ul>
             </nav>
             <div className="header__burger">
