@@ -17,7 +17,7 @@ const ToDoInput = () => {
     const onclickHandler = () => {
         setValue({title: '', completed: 'active'})
         //dispatch(createTask(value))
-        dispatch(updateToDoList(value))
+        dispatch(updateToDoList(value, 'TODO/CREATE_TASK'))
     }
 
     return (
