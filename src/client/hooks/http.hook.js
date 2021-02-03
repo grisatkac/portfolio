@@ -4,7 +4,7 @@ const useHttp = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
 
-    const request = useCallback(async (url, { method = 'GET',body = null, headers = {}}) => {
+    const request = useCallback(async (url,  method = 'GET',body = null, headers = {}) => {
         try {
             setLoading(true)
 
