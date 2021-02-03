@@ -8,7 +8,17 @@ export const createTask = (task) => ({
     payload: task
 })
 
-export const updateToDoList = (data) => ({
+export const deleteTask = (task) => ({
+    type: 'TODO/DELETE_TASK',
+    payload: task
+})
+
+export const changeTask = (task) => ({
+    type: 'TODO/CHANGE_TASK',
+    payload: task
+})
+
+export const updateToDoList = (data, action) => ({
     type: 'TODO/UPDATE_LIST',
-    payload: data
+    payload: {data, action}
 })
