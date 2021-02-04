@@ -43,9 +43,9 @@ router.post('/create', auth, async (req, res) => {
     }
 })
 
-router.post('/delete', auth, async (res, req) => {
+router.post('/delete', auth, async (req, res) => {
     try {
-        const {taskId} = req.body.taskId
+        const {taskId} = req.body
 
         await Task.deleteOne({_id: taskId}, (err) => {
             if (err) {
