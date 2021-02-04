@@ -9,8 +9,18 @@ function* updateToDoListWorker({payload: {data, action}}) {
     try {
         switch (action) {
             case 'TODO/CREATE_TASK':
-                yield call(() => {fetchUpdateToDoList(data, 'http://localhost:3000/app/todo/create')})
-                yield put(createTask(data))
+                //yield call(() => {fetchUpdateToDoList(data, 'http://localhost:3000/app/todo/create')})
+                const { taskId } = yield call(() => {
+                    return fetchUpdateToDoList(data, 'http://localhost:3000/app/todo/create')
+                })
+                console.log('task id in saga: ', taskId)
+                //console.log('new task: ', newTask)
+                console.log('receive data: ', data)
+                const localStorageTasks = yield JSON.parse(localStorage.getItem('UserTasks'))
+                const newLocalStorage = yield localStorageTasks.push({_id: taskId, ...data})
+                yield localStorage.setItem('UserTasks', JSON.stringify(newLocalStorage))
+                //yield put(createTask({...data, _id: taskId}))
+                yield put(createTask({_id: taskId, ...data }))
                 break;
             case 'TODO/DELETE_TASK':
                 yield call(() => {fetchUpdateToDoList({taskId: data}, 'http://localhost:3000/app/todo/delete')})
@@ -39,5 +49,11 @@ const fetchUpdateToDoList = async (body, url) => {
             'authorization':  localStorage.getItem('userData')
         }
     })
-    return await response.json()
+
+    console.log('--- response ---')
+    console.log(response)
+    const data = await response.json()
+    console.log('---data---')
+    console.log(data)
+    return data
 }
