@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import ToDo from './ToDo'
 
 const Home = () => {
@@ -8,8 +9,8 @@ const Home = () => {
                 Home page
             </div>
             <div>
-                <ToDo />
-            </div>    
+                <NavLink to="/tasks"><p>Планировщик задач</p></NavLink>
+            </div>
         </>
     )
 }
