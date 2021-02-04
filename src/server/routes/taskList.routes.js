@@ -35,7 +35,7 @@ router.post('/create', auth, async (req, res) => {
 
         await newTask.save()
 
-        return res.status(200).json({ message: 'Запрос прошел успешно' })
+        return res.status(200).json({newTask, taskId: newTask._id})
 
     } catch (error) {
         console.log(error)
