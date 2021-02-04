@@ -7,19 +7,13 @@ export function* updateToDoListWatcher() {
 
 function* updateToDoListWorker({payload: {data, action}}) {
     try {
-        console.log('---data---')
-        console.log(data)
-        console.log('---action---')
-        console.log(action)
         switch (action) {
             case 'TODO/CREATE_TASK':
-                //const data = yield call(() => fetchUpdateToDoList(payload))
                 yield call(() => {fetchUpdateToDoList(data, 'http://localhost:3000/app/todo/create')})
                 yield put(createTask(data))
                 break;
             case 'TODO/DELETE_TASK':
-                console.log(data)
-                //yield call(() => {fetchUpdateToDoList({taskId: data}, 'http://localhost:3000/app/todo/delete')})
+                yield call(() => {fetchUpdateToDoList({taskId: data}, 'http://localhost:3000/app/todo/delete')})
                 yield put(deleteTask(data))
                 break;
             case 'TODO/CHANGE_TASK':
@@ -29,15 +23,6 @@ function* updateToDoListWorker({payload: {data, action}}) {
             default:
                 break;
         }
-        /*const data = yield call(() => fetchUpdateToDoList(payload))
-        console.log(data)*/
-        //yield put({type: 'TODO/CREATE_TASK', payload})
-        /*console.log('---data---')
-        console.log(data)
-        console.log('---action---')
-        console.log(action)
- 
-        yield put(createTask(data))*/
     } catch (error) {
         console.log('Error: ', error)
     }
