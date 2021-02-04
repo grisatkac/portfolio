@@ -4,6 +4,7 @@ import Auth from "../pages/Auth"
 import Home from "../pages/Home"
 import About from "../pages/About"
 import Contact from "../pages/Contact"
+import ToDo from '../pages/ToDo'
 
 const Routes = (auth) => {
     if (auth) {
@@ -17,6 +18,9 @@ const Routes = (auth) => {
                 </Route>
                 <Route path="/contact">
                     <Contact />
+                </Route>
+                <Route path="/tasks">
+                    <ToDo />
                 </Route>
                 <Redirect to="/home" />
             </Switch>
