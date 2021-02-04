@@ -19,6 +19,7 @@ const ToDoFooter = ({ tasks, setActiveFilter}) => {
                     type="button"
                     name="title"
                     value={filter}
+                    key={filter}
                     onClick={clickHandler}
                 />)
             })}
