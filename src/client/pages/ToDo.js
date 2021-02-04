@@ -5,8 +5,7 @@ import ToDoInput from '../components/ToDo/ToDoInput'
 import ToDoTasks from '../components/ToDo/ToDoTasks'
 import Context from '../context/authContext'
 import useHttp from '../hooks/http.hook'
-import { createTask } from '../redux/actions/toDo'
-
+import { createTask, loadTasks } from '../redux/actions/toDo'
 
 const ToDo = () => {
     const dispatch = useDispatch()
@@ -15,27 +14,29 @@ const ToDo = () => {
     const tasks = useSelector(state => state.ToDoList.tasks)
     const activeFilter = useSelector(state => state.ToDoList.filter)
     //const [activeFilter, setActiveFilter] = useState('all') setActiveFilter={setActiveFilter}
-    console.log('tasks tood', tasks)
 
     const fetchTasks = useCallback(async () => {
         try {
-            const data = await request('http://localhost:3000/app/todo/tasks', 'GET', null, {
-                'authorization': token
-            })
-            console.log(data)
-            dispatch(createTask(data.tasks))
-
+            const tasksStorage =  localStorage.getItem('UserTasks')
+            if (tasksStorage) {
+                //dispatch(createTask(JSON.parse(tasksStorage)))
+                dispatch(loadTasks(JSON.parse(tasksStorage)))
+            } else {
+                const data = await request('http://localhost:3000/app/todo/tasks', 'GET', null, {
+                    'authorization': token
+                })
+                dispatch(createTask(data.tasks))
+                localStorage.setItem('UserTasks', JSON.stringify(data.tasks))
+            }
+            
         } catch (error) {
             console.log(error)
         }
     }, [token, request])
 
-    if (tasks) {
        useEffect(() => {
-           console.log('tasks length')
            fetchTasks()
        }, [fetchTasks])
-    }
 
     return (
         <>
