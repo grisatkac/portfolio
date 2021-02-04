@@ -3,6 +3,11 @@ export const changeFilter = (filter) => ({
     payload: filter
 })
 
+export const loadTasks = (tasks) => ({
+    type: 'TODO/LOAD_TASKS',
+    payload: tasks
+})
+
 export const createTask = (task) => ({
     type: 'TODO/CREATE_TASK',
     payload: task
