@@ -14,6 +14,7 @@ const useAuth = () => {
     const logout = useCallback((userToken) => {
         setToken(null)
         localStorage.removeItem(storageUser)
+        localStorage.removeItem('UserTasks')
     }, [])
 
     useEffect(() => {
