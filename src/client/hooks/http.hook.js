@@ -12,19 +12,19 @@ const useHttp = () => {
                 body = JSON.stringify(body)
                 headers = {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin': '*',
                 }
             }
-            console.log(url)
 
             const response = await fetch(url, { method, body, headers })
-
+            
             if (!response.ok) {
-                return 'Ошибка при запросе'
+                //return 'Ошибка при запросе'
+                //throw new Error(`Ошибка при запросе: ${response.statusText}`)
             }
 
             const data = await response.json()
-
+            
             setLoading(false)
             
             return data
@@ -36,7 +36,7 @@ const useHttp = () => {
 
     }, [])
 
-    return { request }
+    return { request, error, request }
 
 }
 
