@@ -10,7 +10,7 @@ app.use(function(req, res, next) {
     next();
   });
   
-
+app.use('/app/token', require('./src/server/routes/refresh.routes'))
 app.use('/app/auth', require('./src/server/routes/auth.routes'))
 app.use('/app/todo', require('./src/server/routes/taskList.routes'))
 async function start() {
