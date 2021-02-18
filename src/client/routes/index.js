@@ -5,6 +5,7 @@ import Home from "../pages/Home"
 import About from "../pages/About"
 import Contact from "../pages/Contact"
 import ToDo from '../pages/ToDo'
+import Messages  from '../pages/Messages'
 
 const Routes = (auth) => {
     if (auth) {
@@ -21,6 +22,9 @@ const Routes = (auth) => {
                 </Route>
                 <Route path="/tasks">
                     <ToDo />
+                </Route>
+                <Route path="/messages">
+                    <Messages />
                 </Route>
                 <Redirect to="/home" />
             </Switch>
