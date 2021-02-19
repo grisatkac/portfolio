@@ -36,7 +36,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].[hash].css'
+            filename: '[name].css'
         })
     ],
     module: {
@@ -62,11 +62,12 @@ module.exports = {
                     {
                       loader: MiniCssExtractPlugin.loader,
                       options: {
-                        hot: true,
+                        hmr: true,
                         reloadAll: true
                       },
                     },
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader',
                   ]
             },
             {
