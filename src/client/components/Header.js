@@ -1,32 +1,59 @@
-import React, { useContext } from 'react'
-import {Route, Switch, NavLink} from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Route, Switch, NavLink } from 'react-router-dom'
 import AuthContext from '../context/authContext'
 
 const Header = () => {
-    const {token, logout} = useContext(AuthContext)
-
+    const { token, logout } = useContext(AuthContext)
+    const [openMenu, setOpenMenu] = useState(false)
     const clickLogOut = (e) => {
         e.preventDefault()
         logout(token)
     }
 
+    const clickMenu = () => {
+        setOpenMenu((prevState) => {
+            return !prevState
+        })
+    }
+
     return (
         <header className="header">
-        <div className="container">
-            <div className="header__logo"><span>PISTAPOOL</span></div>
-            <nav className="header__nav">
-                <ul>
-                    <NavLink exact to="/home"><li>Home</li></NavLink>
-                    <NavLink to="/about"><li>About</li></NavLink>
-                    <NavLink to="/contact"><li>Contact</li></NavLink>
-                </ul>
-            </nav>
-            <div className="header__burger">
-                <span></span>
+            <div className="header-container">
+                <div className="header-logotext">
+                    <NavLink exact to="/home">PISTAPOOL</NavLink>
+                </div>
+                <nav className="header-nav">
+                    <ul>
+                        <li><NavLink exact to="/home">Home</NavLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                        <li><NavLink to="/contact">Contact</NavLink></li>
+                    </ul>
+                </nav>
+                {/*<div className="header__burger">
+                    <span></span>
+                </div>*/}
+                {/*<div className="header-user">
+                    <p>Имя пользователя</p>
+                </div>*/}
+                
+                <button 
+                    className="header-burger"
+                    onClick={clickMenu}>
+                
+                    <span className="burger-line"></span>
+                    <span className="burger-line"></span>
+                    <span className="burger-line"></span>
+                </button>
+
+                {openMenu && 
+                <div className="header-submenu">
+                    <button onClick={clickLogOut}>Выйти</button>
+                </div>}
+                
+                
+                
             </div>
-            <button onClick={clickLogOut}>Выйти</button>
-        </div>
-    </header>
+        </header>
     )
 }
 
