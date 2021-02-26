@@ -17,35 +17,40 @@ export default function Auth() {
 
     const registerHandler = async (e) => {
         e.preventDefault()
-        //request('http://localhost:3000/app/auth/registr', {method: 'POST', body: {email, password}})
+        //request('http://localhost:3000/app/auth/registr', {method: 'POST', body: {email, password}}) <label htmlFor='password'>Введите пароль:</label> <label htmlFor='email'>Введите email:</label>
         request('http://localhost:3000/app/auth/registr', 'POST', {email, password})
     }
 
     return (
-        <div>
-            <label>
-                Введите email:
-                <input 
-                    type="text"
-                    placeholder='Введите email'
-                    value={email}
-                    name={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-            </label>
-
-            <label>
-                Введите пароль:
-                <input 
-                    type="password"
-                    placeholder='Введите пароль'
-                    value={password}
-                    name={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-            </label>
-            <button onClick={loginHandler}>Войти</button>
-            <button onClick={registerHandler}>Зарегистрироваться</button>
+        <div className="auth-card">
+            <div className="content">
+                <div className="input-field">
+                    <label htmlFor='email'>Почта:</label>
+                    <input
+                        type="text"
+                        placeholder='Введите email'
+                        value={email}
+                        name='email'
+                        id='email'
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className="input-field">
+                    <label htmlFor='password'>Пароль:</label>
+                    <input
+                        type="password"
+                        placeholder='Введите пароль'
+                        value={password}
+                        name='password'
+                        id='password'
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="auth-btns">
+                    <button onClick={loginHandler}>Войти</button>
+                    <button onClick={registerHandler}>Зарегистрироваться</button>
+                </div>
+            </div>
         </div>
 
     )
