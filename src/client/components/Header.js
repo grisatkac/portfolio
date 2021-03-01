@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Route, Switch, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import AuthContext from '../context/authContext'
 
 const Header = () => {
@@ -44,7 +44,7 @@ const Header = () => {
                     {/*<span className="burger-line"></span>
                     <span className="burger-line"></span>
                     <span className="burger-line"></span>*/}
-                    <p>Меню</p>
+                    <p>Menu</p>
                 </button>
 
                 {openMenu && 
