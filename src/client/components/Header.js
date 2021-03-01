@@ -10,7 +10,8 @@ const Header = () => {
         logout(token)
     }
 
-    const clickMenu = () => {
+    const clickMenu = (e) => {
+        e.preventDefault()
         setOpenMenu((prevState) => {
             return !prevState
         })
@@ -40,9 +41,10 @@ const Header = () => {
                     className="header-burger"
                     onClick={clickMenu}>
                 
+                    {/*<span className="burger-line"></span>
                     <span className="burger-line"></span>
-                    <span className="burger-line"></span>
-                    <span className="burger-line"></span>
+                    <span className="burger-line"></span>*/}
+                    <p>Меню</p>
                 </button>
 
                 {openMenu && 
