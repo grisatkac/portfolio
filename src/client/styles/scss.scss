@@ -1,8 +1,5 @@
 @import '~normalize.css';
-
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap');
-
 
 $font-merriweather-sans: 'Merriweather', serif;
 $font-merriweather-sans-serif: 'Merriweather Sans', sans-serif;
@@ -357,6 +354,8 @@ a:visited {
 
 .footer {
     width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
     background-color: #d1d3d3;
     font-family: $font-merriweather-sans;
     font-size: 18px;
@@ -371,15 +370,17 @@ a:visited {
         .social-list {
             display: flex;
             justify-content: center;
+            margin-bottom: 20px;
         }
         .social-link {
             list-style-type: none;
-            width: 20px;
-            height: 20px;
-            
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            margin-right: 10px;
         }
 
         .social-link-vk {
@@ -399,11 +400,15 @@ a:visited {
         }
 
         .social-link-in {
-            background-image: url('../../public/img/icons/instagram.svg');
+            background-image: url('../../public/img/icons/linkedin.svg');
         }
-
-
     }
+
+    &-text {
+        font-size: 18px;
+        font-family: $font-merriweather-sans-serif;
+    }
+
 
 
 }
