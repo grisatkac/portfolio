@@ -408,10 +408,56 @@ a:visited {
         font-size: 18px;
         font-family: $font-merriweather-sans-serif;
     }
-
-
-
 }
+
+
+/// ABOUT PAGE
+
+.about-description {
+    padding-top: 30px;
+    padding-bottom: 125px;
+}
+
+.description-header {
+    margin-bottom: 130px;
+    line-height: 1.5;
+    p {
+        text-align: center;
+        margin: 30px auto 0 auto;
+        font-size: 34px;
+        font-family: $font-merriweather-sans-serif;
+    }
+
+    p:nth-child(2) {
+        width: 40%;
+        font-size: 18px;
+        font-family: $font-merriweather-sans;
+    }
+}
+
+.description-list {
+    width: 80%;
+    max-width: 1450px;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    .description-item {
+        width: 30%;
+    }
+    .item-header {
+        font-family: $font-merriweather-sans-serif;
+        font-size: 24px;
+        margin: 30px 0 25px 0;
+    }
+    .item-text {
+        font-family: $font-merriweather-sans;
+        font-size: 16px;
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
 
 
 
