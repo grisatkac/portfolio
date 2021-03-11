@@ -81,7 +81,7 @@ const Home = () => {
                 </div>
                 <div>
                     <NavLink to="/messages">Сообщения</NavLink>
-    </div>*/}
+                </div>*/}
             </div>
         </main>
     )

@@ -20,6 +20,7 @@
     "Redux",
     "Node"
   ],
+  "homegape": "./",
   "author": "Grisha Tkach <grisatkac@gmail.com>",
   "license": "ISC",
   "bugs": {

@@ -26,7 +26,7 @@ const Routes = (auth) => {
                 <Route path="/messages">
                     <Messages />
                 </Route>
-                <Redirect to="/home" />
+                <Redirect to="/about" />
             </Switch>
         )
     }
