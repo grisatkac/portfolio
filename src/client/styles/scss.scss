@@ -421,15 +421,16 @@ a:visited {
 .description-header {
     margin-bottom: 130px;
     line-height: 1.5;
-    p {
-        text-align: center;
+    text-align: center;
+    h2 {
         margin: 30px auto 0 auto;
         font-size: 34px;
         font-family: $font-merriweather-sans-serif;
     }
 
-    p:nth-child(2) {
+    p {
         width: 40%;
+        margin: 0 auto;
         font-size: 18px;
         font-family: $font-merriweather-sans;
     }
@@ -455,6 +456,30 @@ a:visited {
         font-size: 16px;
         width: 70%;
         margin: 0 auto;
+    }
+}
+
+.about-pricing {
+    width: 100%;
+    background-color: #f0f1f1;
+    &-container {
+        width: 100%;
+        max-width: 1450px;
+        margin: 0 auto;
+        padding-top: 130px;
+    }
+
+    .pricing-header {
+        margin-bottom: 120px;
+    }
+}
+
+.pricing-offers {
+    display: flex;
+    .free-offer,
+    .basic-offer,
+    .ultimates-offer {
+        width: 30%;
     }
 }
 
