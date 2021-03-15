@@ -47,13 +47,13 @@ const About = () => {
                     <div className="about-pricing-container">
                         <div className="pricing-header">
                             <h2>Pricing Plan</h2>
-                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                         </div>
-                        <div className="pricing-offers">
-                            <div className="free-offer">
+                        <div className="offers-list">
+                            <div className="offer">
                                 <div className="offer-header">
                                     <p>Free Trail</p>
-                                    <p>00 per month</p>
+                                    <p><sup>$</sup>00 <span>per month</span></p>
                                 </div>
                                 <div className="offer-description">
                                     <p>30 Free Trail</p>
@@ -65,10 +65,10 @@ const About = () => {
                                     <button>Order Now</button>
                                 </div>
                             </div>
-                            <div className="basic-offer">
+                            <div className="offer">
                                 <div className="offer-header">
                                     <p>Basic</p>
-                                    <p>50 per month</p>
+                                    <p><sup>$</sup>50 <span>per month</span></p>
                                 </div>
                                 <div className="offer-description">
                                     <p>30 Free Trail</p>
@@ -80,10 +80,10 @@ const About = () => {
                                     <button>Order Now</button>
                                 </div>
                             </div>
-                            <div className="ultimates-offer">
+                            <div className="offer">
                                 <div className="offer-header">
                                     <p>Ultimates</p>
-                                    <p>99 per month</p>
+                                    <p><sup>$</sup>99 <span>per month</span></p>
                                 </div>
                                 <div className="offer-description">
                                     <p>30 Free Trail</p>
