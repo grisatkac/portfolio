@@ -15,7 +15,7 @@ const Home = () => {
                         
                         <div className="hero-buttons">
                             <button>OUR SERVICES</button>
-                            <button>HIRE IS NOW</button>
+                            <button><p>HIRE IS NOW</p></button>
                         </div>
                     </div>
                 </section>
