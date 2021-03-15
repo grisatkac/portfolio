@@ -462,25 +462,102 @@ a:visited {
 .about-pricing {
     width: 100%;
     background-color: #f0f1f1;
+    font-family: $font-merriweather-sans-serif;
+    text-align: center;
+    color: #212121;
     &-container {
         width: 100%;
         max-width: 1450px;
         margin: 0 auto;
         padding-top: 130px;
+        padding-bottom: 125px;
     }
 
     .pricing-header {
         margin-bottom: 120px;
+        h2 {
+            font-size: 36px;
+        }
+        p{
+            width: 50%;
+            margin: 35px auto 0px auto;
+            font-size: 15px;
+            line-height: 1.8;
+        }
     }
 }
 
-.pricing-offers {
+.offers-list {
     display: flex;
-    .free-offer,
-    .basic-offer,
-    .ultimates-offer {
+    justify-content: space-around;
+    .offer {
         width: 30%;
+        background-color: #fff;
+        &:hover {
+            box-shadow: 0px 0px 25px #c8c8c8;
+        }
     }
+
+    .offer-header {
+        padding-top: 55px;
+        padding-bottom: 40px;
+        background-color: #3949ab;
+        color: #fff;
+        P {
+            font-size: 30px;
+        }
+        p:nth-child(1) {
+            margin-bottom: 20px;
+        }
+        sup {
+            font-size: 17px;
+        }
+        span {
+            font-size: 16px;
+        }
+    }
+
+    .offer-description {
+        font-family: $font-merriweather-sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        padding-top: 30px;
+        width: 50%;
+        margin: 0 auto;
+        color: #979797;
+        p {
+            border-bottom: 1px solid #bfbfbf;
+            padding-top: 28px;
+            padding-bottom: 16px;
+        }
+    }
+
+    .offer-button {
+        font-size: 24px;
+        font-family: $font-merriweather-sans;
+        margin-top: 70px;
+        margin-bottom: 65px;
+        
+        
+        button {
+            width: 50%;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            cursor: pointer;
+        }
+
+        button:active {
+            color: white;
+            background-color: #00897b;
+            border: none;
+        }
+
+    }
+
+    
 }
 
 
