@@ -543,7 +543,7 @@ a:visited {
             width: 50%;
             color: black;
             background-color: white;
-            border: 1px solid black;
+            border: 3px solid black;
             padding-top: 25px;
             padding-bottom: 25px;
             cursor: pointer;
@@ -554,10 +554,48 @@ a:visited {
             background-color: #00897b;
             border: none;
         }
+    }
+}
 
+.about-team {
+    width: 100%;
+    font-family: $font-merriweather-sans-serif;
+    text-align: center;
+    color: #212121;
+    &-container {
+        width: 100%;
+        max-width: 1450px;
+        margin: 0 auto;
+        padding-top: 130px;
+        padding-bottom: 125px;
     }
 
-    
+    .team-header {
+        margin-bottom: 120px;
+        h2 {
+            font-size: 36px;
+        }
+        p{
+            width: 50%;
+            margin: 35px auto 0px auto;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+    }
+
+    .team-list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .employee {
+        width: 28%;
+        img {
+            object-fit: cover;
+        }
+        
+    }
+
 }
 
 
