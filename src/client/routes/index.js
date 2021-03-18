@@ -6,6 +6,7 @@ import About from "../pages/About"
 import Contact from "../pages/Contact"
 import ToDo from '../pages/ToDo'
 import Messages  from '../pages/Messages'
+import Portfolio from '../pages/Portfolio'
 
 const Routes = (auth) => {
     if (auth) {
@@ -19,6 +20,9 @@ const Routes = (auth) => {
                 </Route>
                 <Route path="/contact">
                     <Contact />
+                </Route>
+                <Route path="/portfolio" >
+                    <Portfolio />
                 </Route>
                 <Route path="/tasks">
                     <ToDo />
