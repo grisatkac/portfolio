@@ -3,19 +3,17 @@ import { NavLink } from 'react-router-dom'
 
 const Portfolio = () => {
     return (
-        <>
-            <div className="todo">
-                <div className="todo-container">
+        <main className="main">
+            <div className="main-container">
+                <div>
                     <div>Здесь вы можете можете составлять планы</div>
+                    <NavLink to="/tasks"><p>Планировщик задач</p></NavLink>
                 </div>
-            </div>
-            <div>
-                <NavLink to="/tasks"><p>Планировщик задач</p></NavLink>
-            </div>
-            {/*<div>
+                {/*<div>
                 <NavLink to="/messages">Сообщения</NavLink>
             </div>*/}
-        </>
+            </div>
+        </main>
     )
 }
 
