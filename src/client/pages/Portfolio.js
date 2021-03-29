@@ -12,9 +12,9 @@ const Portfolio = () => {
             <div>
                 <NavLink to="/tasks"><p>Планировщик задач</p></NavLink>
             </div>
-            <div>
+            {/*<div>
                 <NavLink to="/messages">Сообщения</NavLink>
-            </div>
+            </div>*/}
         </>
     )
 }

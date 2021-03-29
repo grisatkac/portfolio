@@ -1,5 +1,6 @@
 import React, { useCallback, useContext, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import ToDoFilters from '../components/ToDo/ToDoFilters'
 import ToDoFooter from '../components/ToDo/ToDoFooter'
 import ToDoInput from '../components/ToDo/ToDoInput'
 import ToDoTasks from '../components/ToDo/ToDoTasks'
@@ -41,6 +42,7 @@ const ToDo = () => {
     return (
         <>
             <ToDoInput />
+            <ToDoFilters tasks={tasks} activeFilter={activeFilter}/>
             <ToDoTasks tasks={tasks} activeFilter={activeFilter}/>
             <ToDoFooter tasks={tasks} activeFilter={activeFilter}  />
         </>
