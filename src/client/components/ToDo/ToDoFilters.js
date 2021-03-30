@@ -27,4 +27,5 @@ const ToDoFilters = ({ tasks, setActiveFilter}) => {
     )
 }
 
+
 export default ToDoFilters;
