@@ -40,12 +40,14 @@ const ToDo = () => {
        }, [fetchTasks])
 
     return (
-        <>
-            <ToDoInput />
-            <ToDoFilters tasks={tasks} activeFilter={activeFilter}/>
-            <ToDoTasks tasks={tasks} activeFilter={activeFilter}/>
-            <ToDoFooter tasks={tasks} activeFilter={activeFilter}  />
-        </>
+        <div className="todo">
+            <div className="todo-container">
+                <ToDoInput />
+                <ToDoFilters tasks={tasks} activeFilter={activeFilter} />
+                <ToDoTasks tasks={tasks} activeFilter={activeFilter} />
+                {/*<ToDoFooter tasks={tasks} activeFilter={activeFilter}  */}
+            </div>
+        </div>
     )
 }
 

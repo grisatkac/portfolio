@@ -21,7 +21,7 @@ const ToDoInput = () => {
     }
 
     return (
-        <div>
+        <div className="todo-input">
             <label htmlFor="input">Заголовок задачи</label>
             <input 
                 type="text"

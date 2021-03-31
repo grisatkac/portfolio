@@ -15,7 +15,7 @@ const Routes = (auth) => {
                 <Route path="/home" exact>
                     <Home />
                 </Route>
-                <Route path="/about" exact>
+                <Route path="/about" >
                     <About />
                 </Route>
                 <Route path="/contact">
@@ -24,13 +24,13 @@ const Routes = (auth) => {
                 <Route path="/portfolio" >
                     <Portfolio />
                 </Route>
-                <Route path="/tasks">
+                <Route path="/tasks" >
                     <ToDo />
                 </Route>
                 <Route path="/messages">
                     <Messages />
                 </Route>
-                <Redirect to="/about" />
+                <Redirect to="/tasks" />
             </Switch>
         )
     }
