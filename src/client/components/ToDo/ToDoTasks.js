@@ -19,9 +19,11 @@ const ToDoTasks = ({ tasks, activeFilter }) => {
     }, [tasks, activeFilter])
     
     return (
-        <ul>
-            {sortTasks()}
-        </ul>)
+        <div className="todo-list">
+            <ul>
+                {sortTasks()}
+            </ul>
+        </div>)
 }
 
 export default ToDoTasks

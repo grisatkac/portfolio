@@ -38,6 +38,9 @@ a {
     }
 }
 
+li {
+    list-style-type: none;
+}
 link {
     text-decoration: none;
 }
@@ -624,6 +627,12 @@ a:visited {
         width: 100%;
         max-width: 1450px;
         margin:  0 auto;
+        text-align: center;
+    }
+
+    &-input { 
+        width: 80%;
+        margin: 0 auto;
     }
 }
 

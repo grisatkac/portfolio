@@ -11,7 +11,7 @@ const ToDoFilters = ({ tasks, setActiveFilter}) => {
     }
 
     return (
-        <div>
+        <div className="todo-filters">
             <p>Осталось задач: {tasks.length}</p>
             {Default.ToDoFilters.map(filter => {
                 return (
