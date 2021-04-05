@@ -11,7 +11,7 @@ const TaskItem = ({ task }) => {
     
     return (
         <li>
-            <p>Задача: {task.title}</p>
+            <p>{task.title}</p>
             <button onClick={onclickHandler}>Удалить</button>
         </li>
     )

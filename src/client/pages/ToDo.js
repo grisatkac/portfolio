@@ -26,7 +26,8 @@ const ToDo = () => {
                 const data = await request('http://localhost:3000/app/todo/tasks', 'GET', null, {
                     'authorization': token
                 })
-                dispatch(createTask(data.tasks))
+                //dispatch(createTask(data.tasks))
+                dispatch(loadTasks(data.tasks))
                 localStorage.setItem('UserTasks', JSON.stringify(data.tasks))
             }
             
