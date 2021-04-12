@@ -24,6 +24,7 @@ const ToDoInput = () => {
             <input 
                 type="text"
                 name="title"
+                placeholder="Input name of the task..."
                 value={value.title}
                 onChange={changeInputHanler}
             />
