@@ -76,6 +76,7 @@ const updateLocalStorage = (action, data) => {
 
                 return {...task, completed: data.completed}
             })
+            localStorage.setItem('UserTasks', JSON.stringify(newLocalStorageTasks))
             break;
         default:
             break;
