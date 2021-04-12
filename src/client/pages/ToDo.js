@@ -1,12 +1,11 @@
 import React, { useCallback, useContext, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ToDoFilters from '../components/ToDo/ToDoFilters'
-import ToDoFooter from '../components/ToDo/ToDoFooter'
 import ToDoInput from '../components/ToDo/ToDoInput'
 import ToDoTasks from '../components/ToDo/ToDoTasks'
 import Context from '../context/authContext'
 import useHttp from '../hooks/http.hook'
-import { createTask, loadTasks } from '../redux/actions/toDo'
+import { loadTasks } from '../redux/actions/toDo'
 
 const ToDo = () => {
     const dispatch = useDispatch()
