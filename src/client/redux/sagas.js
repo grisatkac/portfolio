@@ -25,7 +25,10 @@ function* updateToDoListWorker({payload: {data, action}}) {
                 yield put(deleteTask(data))
                 break;
             case 'TODO/CHANGE_TASK':
-                //yield call(() => {fetchUpdateToDoList(data, 'http://localhost:3000/app/todo/change')})
+                yield call(() => {fetchUpdateToDoList(data, 'http://localhost:3000/app/todo/change')})
+
+                yield updateLocalStorage('updateTask', data)
+                
                 yield put(changeTask(data))
                 break;
             default:
@@ -48,28 +51,32 @@ const fetchUpdateToDoList = async (body, url) => {
         }
     })
 
-    console.log('--- response ---')
-    console.log(response)
     const data = await response.json()
-    console.log('---data---')
-    console.log(data)
+   
     return data
 }
 
 const updateLocalStorage = (action, data) => {
     let localStorageTasks = JSON.parse(localStorage.getItem('UserTasks'))
+    let newLocalStorageTasks
     switch (action) {
         case 'add':
             localStorageTasks.push(data)
             localStorage.setItem('UserTasks', JSON.stringify(localStorageTasks))
             break;
         case 'delete':
-            let newLocalStorageTasks = localStorageTasks.filter(task => data != task._id)
+            newLocalStorageTasks = localStorageTasks.filter(task => data != task._id)
             localStorage.setItem('UserTasks', JSON.stringify(newLocalStorageTasks))
             break;
-        case 'update':
+        case 'updateTask':
+            newLocalStorageTasks = localStorageTasks.map((task) => {
+                if (task._id !== data._id) {
+                    return task
+                }
+
+                return {...task, completed: data.completed}
+            })
             break;
-    
         default:
             break;
     }
