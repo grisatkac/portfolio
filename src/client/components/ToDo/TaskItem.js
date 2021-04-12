@@ -6,6 +6,9 @@ const TaskItem = ({task: { _id, title, completed }}) => {
     //const [isCompleted, setCompleted] = useState(completed)
     const dispatch = useDispatch()
     console.log(title, completed, _id)
+    console.log('--- task itaem ---')
+    console.log(title)
+    console.log(completed)
     const deleteHandler = () => {
         dispatch(updateToDoList(_id, 'TODO/DELETE_TASK'))
     }
@@ -17,16 +20,19 @@ const TaskItem = ({task: { _id, title, completed }}) => {
     }
     
     return (
-        <li>
-             <i 
-                className={ (completed === 'active') ? 'mark far fa-circle' : 'mark far fa-check-circle'} 
-                onClick={changeStatusOfComplete}
-            />
-             {/*<i  className={isCompleted ? 'mark far fa-check-circle' : 'mark far fa-circle'} />*/}
-            <p>{title}</p>
-            <button 
+        <li className="todo-item">
+            <div>
+                <i
+                    className={(completed === 'active') ? 'mark far fa-circle' : 'mark far fa-check-circle'}
+                    onClick={changeStatusOfComplete}
+                />
+                {/*<i  className={isCompleted ? 'mark far fa-check-circle' : 'mark far fa-circle'} />*/}
+                <p>{title}</p>
+            </div>
+            
+            {/*<button 
                 onClick={deleteHandler}
-                value={'deleteBtn'}>Удалить</button>
+            value={'deleteBtn'}>Удалить</button>*/}
             <i className="fas fa-trash-alt" 
                onClick={deleteHandler}
             />
