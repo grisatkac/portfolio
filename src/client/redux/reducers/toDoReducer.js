@@ -11,7 +11,13 @@ export const toDoReducer = (state = initialState, action) => {
         case 'TODO/DELETE_TASK':
             return {...state, tasks: state.tasks.filter(task => task._id !== action.payload)}
         case 'TODO/CHANGE_TASK':
-            
+            return {...state, tasks: state.tasks.map(task => {
+                if (task._id !== action.payload._id) {
+                    return task
+                }
+
+                return {...task, completed: action.payload.completed}
+            })}
             break;
         case 'TODO/CHANGE_FILTER':
             return { ...state, filter: action.payload }
