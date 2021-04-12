@@ -39,7 +39,8 @@ async function start() {
         await mongoose.connect('mongodb+srv://Grisha:123456Aa@cluster0.zrczy.mongodb.net/<dbname>?retryWrites=true&w=majority', {
         useUnifiedTopology: true,
         useNewUrlParser: true,
-        useCreateIndex: true
+        useCreateIndex: true,
+        useFindAndModify: true
     })
 
     app.listen(3000, () => console.log('server has been started...'))
