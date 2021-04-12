@@ -10,8 +10,6 @@ const ToDoTasks = ({ tasks, activeFilter }) => {
     
     const sortTasks = useCallback(() => {
         return tasks.map((task) => {
-            console.log('--- task ---')
-            console.log(task)
             if (task.completed === activeFilter) {
                 return <TaskItem task={task} key={task._id}/>
             } else if (task.completed !== activeFilter && activeFilter === 'all') {
@@ -21,8 +19,8 @@ const ToDoTasks = ({ tasks, activeFilter }) => {
     }, [tasks, activeFilter])
     
     return (
-        <div className="todo-list">
-            <ul>
+        <div className="todo-tasks">
+            <ul className="todo-list">
                 {sortTasks()}
             </ul>
         </div>)
