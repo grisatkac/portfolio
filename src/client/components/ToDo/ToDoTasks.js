@@ -10,6 +10,8 @@ const ToDoTasks = ({ tasks, activeFilter }) => {
     
     const sortTasks = useCallback(() => {
         return tasks.map((task) => {
+            console.log('--- task ---')
+            console.log(task)
             if (task.completed === activeFilter) {
                 return <TaskItem task={task} key={task._id}/>
             } else if (task.completed !== activeFilter && activeFilter === 'all') {
