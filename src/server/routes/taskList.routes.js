@@ -49,7 +49,7 @@ router.post('/delete', auth, async (req, res) => {
 
         await Task.deleteOne({_id: taskId}, (err) => {
             if (err) {
-                return res.status(400).json({message: 'Сохранение изменений в БД не выполнена'})
+                return res.status(400).json({message: 'Сохранение изменений в БД не выполнено'})
             }
         })
 
@@ -57,16 +57,24 @@ router.post('/delete', auth, async (req, res) => {
         
     } catch (error) {
         console.log(error)
-        return status(400).json({message: 'Сохранение измненений в БД не выполнена'})
+        return status(400).json({message: 'Сохранение измненений в БД не выполнено'})
     }
 })
 
-router.post('/change', auth, (res, req) => {
-    try {
-        
+router.post('/change', auth, async (req, res) => {
+    try {      
+        const {_id: taskId, completed: taskChangedData} = req.body
+        console.log(req.body)
+        console.log(taskId, taskChangedData)
+        Task.findByIdAndUpdate(taskId, 
+            {completed: taskChangedData}, (err) => {
+                if (err) return res.status(400).json({message: 'Произошла ошибка при изменении задачи'})
+            })
+
+        return res.status(200).json({message: 'Изменение задачи в БД прошло успешно'})
     } catch (error) {
         console.log(error)
-        return status(400).json({message: 'Сохранение измненений в БД не выполнена'})
+        return status(400).json({message: 'Сохранение измненений в БД не выполнено'})
     }
 })
 
