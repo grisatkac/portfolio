@@ -16,7 +16,8 @@ export default function App() {
             <AuthContext.Provider value={{ token, login, logout }}>
                     {auth && <Header />}
                     {routes}
-                    {auth && <Footer />}
+                    {/*auth && <Footer />*/}
+                    <Footer />
             </AuthContext.Provider>
     )
 }
