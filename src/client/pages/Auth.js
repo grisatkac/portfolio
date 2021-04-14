@@ -82,7 +82,42 @@ export default function Auth() {
                             <button onClick={toggleOpenCard}>Create New Account</button>
                         </div>
                     </div>
-                    {checkOpenCard()}
+                    {/*checkOpenCard()*/}
+                    
+                    <div className="signUp-card">
+                        <div className="signUp-card-container">
+                            <div className="signUp-card-header">
+                                <h1>Sign Up</h1>
+                                <p>It's quick and easy.</p>
+                                <div className="close-btn">
+                                <i 
+                                    className="fas fa-times fa-2x">
+                                </i>
+                                </div>
+                                
+                            </div>
+
+                            <div className="signUp-card-fields">
+                                <input 
+                                    type="text"
+                                    placeholder="First name" 
+                                />
+                                <input 
+                                    type="text"
+                                    placeholder="Last name"
+                                />
+                                <input 
+                                    type="email"
+                                    placeholder="Email"
+                                />
+                                <input 
+                                    type="password"
+                                    placeholder="New password"
+                                />
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
