@@ -7,7 +7,7 @@ export default function Auth() {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [openCard, setOpenCard] = useState('logIn')
+    const [openSignUpCard, setSignUpCard] = useState(false)
     const { request } = useHttp()
     const { login } = useContext(Context)
 
@@ -26,24 +26,10 @@ export default function Auth() {
 
     const toggleOpenCard = (e) => {
         e.preventDefault()
-        if (openCard === 'signIn') {
-            setOpenCard('signUp')
+        if (openSignUpCard) {
+            setSignUpCard(false)
         } else {
-            setOpenCard('signIn')
-        }
-    }
-
-    const checkOpenCard = () => {
-        if (openCard !== 'logIn') {
-            return (
-                <>
-                <div className="auth-btns">
-                        {/*<button onClick={loginHandler}>Войти</button>*/}
-                        {/*<button onClick={registerHandler}>Зарегистрироваться</button>*/}
-                    </div>
-                <div className="signIn-card"></div>
-                </>
-            )
+            setSignUpCard(true)
         }
     }
 
@@ -82,88 +68,51 @@ export default function Auth() {
                             <button onClick={toggleOpenCard}>Create New Account</button>
                         </div>
                     </div>
-                    {/*checkOpenCard()*/}
-                    
-                    <div className="signUp-card">
-                        <div className="signUp-card-container">
-                            <div className="signUp-card-header">
-                                <h1>Sign Up</h1>
-                                <p>It's quick and easy.</p>
-                                <div className="close-btn">
-                                <i 
-                                    className="fas fa-times fa-2x">
-                                </i>
+
+                    {openSignUpCard &&
+                        <div className="signUp-card">
+                            <div className="signUp-card-container">
+                                <div className="signUp-card-header">
+                                    <h1>Sign Up</h1>
+                                    <p>It's quick and easy.</p>
+                                    <div className="close-btn" onClick={toggleOpenCard}>
+                                        <i
+                                            className="fas fa-times fa-2x">
+                                        </i>
+                                    </div>
                                 </div>
-                                
-                            </div>
 
-                            <div className="signUp-card-fields">
-                                <input 
-                                    type="text"
-                                    placeholder="First name" 
-                                />
-                                <input 
-                                    type="text"
-                                    placeholder="Last name"
-                                />
-                                <input 
-                                    type="email"
-                                    placeholder="Email"
-                                />
-                                <input 
-                                    type="password"
-                                    placeholder="New password"
-                                />
-                            </div>
+                                <div className="signUp-card-fields">
+                                    <div className="signUp-card-fields-container">
+                                        <input
+                                            type="text"
+                                            placeholder="First name"
+                                            className="first-name"
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="Last name"
+                                            className="last-name"
+                                        />
+                                        <input
+                                            type="email"
+                                            placeholder="Email"
+                                            className="email"
+                                        />
+                                        <input
+                                            type="password"
+                                            placeholder="New password"
+                                            className="password"
+                                        />
 
+                                    </div>
+                                    <button onClick={registerHandler} >Sign Up </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    } 
                 </div>
             </div>
         </main>
     )
 }
-
-/*const checkOpenCard = () => {
-        if (openCard === 'logIn') {
-            return (
-                <div className="auth-card">
-                <div className="auth-card-container">
-                    <div>
-                        <h1>pistapool</h1>
-                    </div>
-                    <div className="logIn-card">
-                        <div className="input-field">
-                            <label htmlFor='email'>Почта:</label>
-                            <input
-                                type="text"
-                                placeholder='Введите email'
-                                value={email}
-                                name='email'
-                                id='email'
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="input-field">
-                            <label htmlFor='password'>Пароль:</label>
-                            <input
-                                type="password"
-                                placeholder='Введите пароль'
-                                value={password}
-                                name='password'
-                                id='password'
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                        <button onClick={loginHandler}>Log In</button>
-                        <button>Create New Account</button>
-                    </div>
-                </div>
-            </div>
-            )
-        }
-
-        return (
-            <div className="signIn-card"></div>
-        )
-    }*/
