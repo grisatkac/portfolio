@@ -399,8 +399,8 @@ a:visited {
 
 .about {
     width: 100%;
-    padding-top: 130px;
-    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     text-align: center;
     &-container {
         max-width: 1450px;
@@ -408,17 +408,17 @@ a:visited {
     }
 
     &-text {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         h2 {
             font-family: $font-merriweather-sans-serif;
-            font-size: 40px;
+            font-size: 38px;
             letter-spacing: 0.75px;
         }
         p {
             width: 60%;
             margin: 40px auto 0 auto;
             font-family: $font-merriweather-sans;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 30px;
             color: #919191;
         }
@@ -447,8 +447,8 @@ a:visited {
 .portfolio {
     width: 100%;
     background-color: #f0f1f1;
-    padding-top: 130px;
-    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     text-align: center;
     &-container {
         max-width: 1450px;
@@ -456,17 +456,17 @@ a:visited {
     }
 
     &-text {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         h2 {
             font-family: $font-merriweather-sans-serif;
-            font-size: 40px;
+            font-size: 38px;
             letter-spacing: 0.75px;
         }
         p {
             width: 60%;
             margin: 40px auto 0 auto;
             font-family: $font-merriweather-sans;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 30px;
             color: black;
         }
@@ -494,8 +494,8 @@ a:visited {
 
 .contact {
     width: 100%;
-    padding-top: 130px;
-    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
     text-align: center;
     &-container {
         max-width: 1450px;
@@ -503,17 +503,17 @@ a:visited {
     }
 
     &-text {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
         h2 {
             font-family: $font-merriweather-sans-serif;
-            font-size: 40px;
+            font-size: 38px;
             letter-spacing: 0.75px;
         }
         p {
             width: 60%;
             margin: 40px auto 0 auto;
             font-family: $font-merriweather-sans;
-            font-size: 20px;
+            font-size: 18px;
             line-height: 30px;
             color: #919191;
         }
@@ -642,6 +642,7 @@ a:visited {
     .item-text {
         font-family: $font-merriweather-sans;
         font-size: 16px;
+        line-height: 1.4;
         width: 70%;
         margin: 0 auto;
     }
@@ -657,8 +658,8 @@ a:visited {
         width: 100%;
         max-width: 1450px;
         margin: 0 auto;
-        padding-top: 130px;
-        padding-bottom: 125px;
+        padding-top: 100px;
+        padding-bottom: 80px;
     }
 
     .pricing-header {
@@ -669,7 +670,7 @@ a:visited {
         p{
             width: 50%;
             margin: 35px auto 0px auto;
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.8;
         }
     }
@@ -679,7 +680,7 @@ a:visited {
     display: flex;
     justify-content: space-around;
     .offer {
-        width: 30%;
+        width: 25%;
         background-color: #fff;
         &:hover {
             box-shadow: 0px 0px 25px #c8c8c8;
@@ -687,44 +688,44 @@ a:visited {
     }
 
     .offer-header {
-        padding-top: 55px;
-        padding-bottom: 40px;
+        padding-top: 40px;
+        padding-bottom: 30px;
         background-color: #3949ab;
         color: #fff;
         P {
-            font-size: 30px;
+            font-size: 26px;
         }
         p:nth-child(1) {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
         sup {
-            font-size: 17px;
+            font-size: 16px;
         }
         span {
-            font-size: 16px;
+            font-size: 14px;
         }
     }
 
     .offer-description {
         font-family: $font-merriweather-sans-serif;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
-        padding-top: 30px;
+        padding-top: 20px;
         width: 50%;
         margin: 0 auto;
         color: #979797;
         p {
             border-bottom: 1px solid #bfbfbf;
-            padding-top: 28px;
+            padding-top: 22px;
             padding-bottom: 16px;
         }
     }
 
     .offer-button {
-        font-size: 24px;
+        font-size: 22px;
         font-family: $font-merriweather-sans;
-        margin-top: 70px;
-        margin-bottom: 65px;
+        margin-top: 40px;
+        margin-bottom: 50px;
         
         
         button {
@@ -732,8 +733,8 @@ a:visited {
             color: black;
             background-color: white;
             border: 3px solid black;
-            padding-top: 25px;
-            padding-bottom: 25px;
+            padding-top: 12px;
+            padding-bottom: 12px;
             cursor: pointer;
         }
 
@@ -754,12 +755,12 @@ a:visited {
         width: 100%;
         max-width: 1450px;
         margin: 0 auto;
-        padding-top: 130px;
-        padding-bottom: 125px;
+        padding-top: 100px;
+        padding-bottom: 80px;
     }
 
     .team-header {
-        margin-bottom: 120px;
+        margin-bottom: 100px;
         h2 {
             font-size: 36px;
         }
@@ -885,9 +886,3 @@ a:visited {
         }
     }   
 }
-
-
-
-
-
-

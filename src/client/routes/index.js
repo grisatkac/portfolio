@@ -30,7 +30,7 @@ const Routes = (auth) => {
                 <Route path="/messages">
                     <Messages />
                 </Route>
-                <Redirect to="/tasks" />
+                <Redirect to="/home" />
             </Switch>
         )
     }
