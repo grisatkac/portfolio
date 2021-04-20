@@ -42,7 +42,7 @@ router.post('/registr', async (req,res) => {
             return res.status(400).json({message: 'Ошибка при регистрации, попробуйте еще раз'})
         }
 
-        const {email, password} = req.body
+        const {email, password, firstName, lastName} = req.body
 
         const user = await User.findOne({email})
 
@@ -52,7 +52,9 @@ router.post('/registr', async (req,res) => {
 
         const newUser = new User({
             email, 
-            password
+            password,
+            firstName,
+            lastName
         })
         
         await newUser.save()

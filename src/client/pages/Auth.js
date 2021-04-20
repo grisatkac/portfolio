@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react'
 import useHttp from '../hooks/http.hook'
 import Context from '../context/authContext'
+import Registr from './Registr'
 
 export default function Auth() {
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [openSignUpCard, setSignUpCard] = useState(false)
@@ -18,19 +17,16 @@ export default function Auth() {
         login(data.token)
     }
 
-    const registerHandler = async (e) => {
-        e.preventDefault()
-        //request('http://localhost:3000/app/auth/registr', {method: 'POST', body: {email, password}}) <label htmlFor='password'>Введите пароль:</label> <label htmlFor='email'>Введите email:</label>
-        request('http://localhost:3000/app/auth/registr', 'POST', { email, password })
-    }
-
+    
     const toggleOpenCard = (e) => {
+        console.log('ok')
         e.preventDefault()
         if (openSignUpCard) {
             setSignUpCard(false)
         } else {
             setSignUpCard(true)
         }
+       
     }
 
     return (
@@ -69,47 +65,12 @@ export default function Auth() {
                         </div>
                     </div>
 
-                    {openSignUpCard &&
-                        <div className="signUp-card">
-                            <div className="signUp-card-container">
-                                <div className="signUp-card-header">
-                                    <h1>Sign Up</h1>
-                                    <p>It's quick and easy.</p>
-                                    <div className="close-btn" onClick={toggleOpenCard}>
-                                        <i
-                                            className="fas fa-times fa-2x">
-                                        </i>
-                                    </div>
-                                </div>
-
-                                <div className="signUp-card-fields">
-                                    <div className="signUp-card-fields-container">
-                                        <input
-                                            type="text"
-                                            placeholder="First name"
-                                            className="first-name"
-                                        />
-                                        <input
-                                            type="text"
-                                            placeholder="Last name"
-                                            className="last-name"
-                                        />
-                                        <input
-                                            type="email"
-                                            placeholder="Email"
-                                            className="email"
-                                        />
-                                        <input
-                                            type="password"
-                                            placeholder="New password"
-                                            className="password"
-                                        />
-
-                                    </div>
-                                    <button onClick={registerHandler} >Sign Up </button>
-                                </div>
-                            </div>
-                        </div>
+                    {openSignUpCard && 
+                    <Registr
+                        toggleOpenCard={toggleOpenCard}
+                        request={request}
+                    />
+                        
                     } 
                 </div>
             </div>
