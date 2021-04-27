@@ -8,6 +8,7 @@ $font-merriweather-sans-serif: 'Merriweather Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $font-merriweather-sans-serif;
 }
 
 *::before,
@@ -28,7 +29,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
 }
 
 main {
@@ -87,9 +87,8 @@ a:visited {
 .header {
     width: 100%;
     height: 100px;
-    //background-color: rgb(40, 44, 52);
+    background-color: rgb(221, 215, 215);
     font-size: 22px;
-    font-family: $font-merriweather-sans-serif;
     border-bottom: 1px solid rgb(46, 45, 45);
 
     &-container {
@@ -103,7 +102,6 @@ a:visited {
     }
 
     &-logotext {
-        font-family: $font-merriweather-sans-serif;
         font-weight: 700;
         font-size: 28px;
         letter-spacing: 2px;
@@ -122,7 +120,6 @@ a:visited {
     }
 
     &-burger {
-        font-family: $font-merriweather-sans-serif;
         height: 40px;
         padding: 15px;
         display: -webkit-box;
@@ -158,18 +155,6 @@ a:visited {
     }
 }
 
-.main {
-    width: 100%;
-
-    /*&-container {
-        width: 100%;
-        //height: 100%;
-        max-width: 1450px;
-        margin: 0 auto;
-    }*/
-}
-
-
 //AUTH PAGE
 .main-auth {
     display: flex;
@@ -191,7 +176,6 @@ a:visited {
 
 .auth-card {
     width: 60%;
-    font-family: $font-merriweather-sans-serif;
     &-container {
         display: flex;
         justify-content: space-between;
@@ -347,8 +331,6 @@ a:visited {
     &-container {
         width: 100%;
         background-color: rgba(18, 13, 15, 0.75);
-        /*max-width: 1450px;
-        margin: 0 auto;*/
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -358,11 +340,9 @@ a:visited {
         margin: 190px 108px auto;
         text-align: center;
         p:nth-child(1) {
-            font-family: $font-merriweather-sans-serif;
             font-size: 80px;
         }
         p:last-child {
-            font-family: $font-merriweather-sans-serif;
             font-size: 29px;
             margin-top: 28px;
         }
@@ -382,7 +362,6 @@ a:visited {
             cursor: pointer;
             color: white;
             font-size: 20px;
-            font-family: $font-merriweather-sans-serif;
         }
 
         button:nth-child(1) {
@@ -410,14 +389,12 @@ a:visited {
     &-text {
         margin-bottom: 80px;
         h2 {
-            font-family: $font-merriweather-sans-serif;
             font-size: 38px;
             letter-spacing: 0.75px;
         }
         p {
             width: 60%;
             margin: 40px auto 0 auto;
-            font-family: $font-merriweather-sans;
             font-size: 18px;
             line-height: 30px;
             color: #919191;
@@ -425,15 +402,11 @@ a:visited {
     }
 
     &-button {
-        font-family: $font-merriweather-sans-serif;
         font-size: 20px;
         
         button {
             width: 15%;
             height: 70px;
-            //border: 3px solid black;
-            //background-color: white;       
-            //background-color: #00897b;
             background-color: #f0f1f1;
             cursor: pointer;
         }
@@ -458,7 +431,6 @@ a:visited {
     &-text {
         margin-bottom: 80px;
         h2 {
-            font-family: $font-merriweather-sans-serif;
             font-size: 38px;
             letter-spacing: 0.75px;
         }
@@ -473,14 +445,11 @@ a:visited {
     }
 
     &-button {
-        font-family: $font-merriweather-sans-serif;
         font-size: 20px;
         
         button {
             width: 15%;
             height: 70px;
-            //border: 3px solid black;
-            //background-color: white;
             color: white;       
             background-color: #959595;
             cursor: pointer;
@@ -505,7 +474,6 @@ a:visited {
     &-text {
         margin-bottom: 80px;
         h2 {
-            font-family: $font-merriweather-sans-serif;
             font-size: 38px;
             letter-spacing: 0.75px;
         }
@@ -520,15 +488,11 @@ a:visited {
     }
 
     &-button {
-        font-family: $font-merriweather-sans-serif;
         font-size: 20px;
         
         button {
             width: 15%;
             height: 70px;
-            //border: 3px solid black;
-            //background-color: white;       
-            //background-color: #00897b;
             background-color: #f0f1f1;
             cursor: pointer;
         }
@@ -594,7 +558,6 @@ a:visited {
 
     &-text {
         font-size: 18px;
-        font-family: $font-merriweather-sans-serif;
     }
 }
 
@@ -613,7 +576,6 @@ a:visited {
     h2 {
         margin: 30px auto 0 auto;
         font-size: 34px;
-        font-family: $font-merriweather-sans-serif;
     }
 
     p {
@@ -635,7 +597,6 @@ a:visited {
         width: 30%;
     }
     .item-header {
-        font-family: $font-merriweather-sans-serif;
         font-size: 24px;
         margin: 30px 0 25px 0;
     }
@@ -651,7 +612,6 @@ a:visited {
 .about-pricing {
     width: 100%;
     background-color: #f0f1f1;
-    font-family: $font-merriweather-sans-serif;
     text-align: center;
     color: #212121;
     &-container {
@@ -707,7 +667,6 @@ a:visited {
     }
 
     .offer-description {
-        font-family: $font-merriweather-sans-serif;
         font-size: 18px;
         font-weight: 400;
         padding-top: 20px;
@@ -748,7 +707,6 @@ a:visited {
 
 .about-team {
     width: 100%;
-    font-family: $font-merriweather-sans-serif;
     text-align: center;
     color: #212121;
     &-container {
@@ -779,7 +737,6 @@ a:visited {
 
     .employee {
         width: 28%;
-        font-family: $font-merriweather-sans-serif;
         &-photo {
             height: 320px;
             margin-bottom: 40px;
@@ -814,7 +771,6 @@ a:visited {
         max-width: 1450px;
         margin:  0 auto 50px auto;
         text-align: center;
-        font-family: $font-merriweather-sans-serif;
     }
 
     &-input { 
@@ -830,7 +786,6 @@ a:visited {
             border: 1px solid #000;
             background-color: #fff;
             padding: 0 5px 0 5px;
-            font-family:  $font-merriweather-sans-serif;
         }
     }
 

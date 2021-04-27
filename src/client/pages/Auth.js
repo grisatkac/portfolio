@@ -3,6 +3,7 @@ import useHttp from '../hooks/http.hook'
 import Context from '../context/authContext'
 import Registr from './Registr'
 import useInput from '../hooks/input.hook'
+import Input from '../components/Input'
 
 export default function Auth() {
     /*const [email, setEmail] = useState('')
