@@ -18,7 +18,9 @@ export default function Auth() {
         e.preventDefault()
         //const data = await request('http://localhost:3000/app/auth/login', {method: 'POST', body: {email, password}})
         const data = await request('http://localhost:3000/app/auth/login', 'POST', { email: email.value, password: password.value })
-        login(data.token)
+        console.log('receive data')
+        console.log(data)
+        login(data.token, data.firstName)
     }
 
     const toggleOpenCard = (e) => {
