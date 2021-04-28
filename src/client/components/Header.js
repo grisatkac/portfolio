@@ -3,12 +3,14 @@ import { NavLink } from 'react-router-dom'
 import AuthContext from '../context/authContext'
 
 const Header = () => {
-    const { token, logout } = useContext(AuthContext)
+    const { token, logout, firstName } = useContext(AuthContext)
     const [openMenu, setOpenMenu] = useState(false)
     const clickLogOut = (e) => {
         e.preventDefault()
         logout(token)
     }
+
+    console.log(firstName)
 
     const clickMenu = (e) => {
         e.preventDefault()
@@ -16,6 +18,12 @@ const Header = () => {
             return !prevState
         })
     }
+
+    useEffect(() => {
+        const subMenu = document.querySelector('.header-submenu')
+        //subMenu.addEventListener()
+        
+    }, [])
 
     return (
         <header className="header">
@@ -37,24 +45,27 @@ const Header = () => {
                 {/*<div className="header-user">
                     <p>Имя пользователя</p>
                 </div>*/}
-                
-                <button 
-                    className="header-burger"
-                    onClick={clickMenu}>
-                
-                    {/*<span className="burger-line"></span>
+                <div className="header-menu">
+                    <button
+                        className="header-burger"
+                        onClick={clickMenu}>
+
+                        {/*<span className="burger-line"></span>
                     <span className="burger-line"></span>
                     <span className="burger-line"></span>*/}
-                    <p>Menu</p>
-                </button>
+                        <p>Menu</p>
+                    </button>
 
-                {openMenu && 
-                <div className="header-submenu">
-                    <button onClick={clickLogOut}>Выйти</button>
-                </div>}
-                
-                
-                
+                    {true &&
+                        <div className="header-submenu">
+                            <div className="userName">
+                                {firstName}
+                            </div>
+                            <div className="logout">
+                                <button onClick={clickLogOut}>Выйти</button>
+                            </div>
+                        </div>}
+                </div>
             </div>
         </header>
     )
