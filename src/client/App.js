@@ -8,15 +8,15 @@ import Routes from './routes'
 import Loader from './components/Loader'
 
 export default function App() {
-    const { token, login, logout, ready } = useAuth()
+    const { token, login, logout, ready, firstName } = useAuth()
     const auth = !!token
     const routes = Routes(auth)
+    console.log(firstName)
 
     return (
-            <AuthContext.Provider value={{ token, login, logout }}>
+            <AuthContext.Provider value={{ token, login, logout, firstName }}>
                     {auth && <Header />}
                     {routes}
-                    {/*auth && <Footer />*/}
                     <Footer />
             </AuthContext.Provider>
     )
